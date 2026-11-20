@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08783f">
+<title>BABYBET — Le sport en direct</title>
+<style>
+:root{--green:#08783f;--deep:#07552f;--lime:#d8f36a;--yellow:#f3df38;--ink:#14251c;--muted:#66766d;--paper:#f4f7f2;--white:#fff;--line:#e5ebe4}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+header{background:var(--green);color:white;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;z-index:5;box-shadow:0 3px 16px #063c2530}
+.brand{display:flex;align-items:center;gap:10px;font-weight:950;font-size:25px;letter-spacing:-1px}.logo{width:38px;height:38px;border-radius:12px;background:var(--yellow);color:var(--deep);display:grid;place-items:center;font-weight:1000}
+nav{display:flex;gap:20px;flex-wrap:wrap}nav a{color:#eaffef;text-decoration:none;font-size:14px;font-weight:700}nav a:hover{color:var(--yellow)}
+.wrap{max-width:1150px;margin:auto;padding:24px 5% 55px}
+.hero{background:linear-gradient(115deg,#07552f,#0c8b4a);border-radius:25px;padding:34px;color:white;display:grid;grid-template-columns:1.4fr .8fr;gap:20px;align-items:center;overflow:hidden}
+.eyebrow{color:var(--yellow);font-weight:900;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.02;margin:10px 0}.hero p{color:#e0f3e6;max-width:560px;line-height:1.65}.hero-art{font-size:100px;text-align:center;filter:drop-shadow(0 12px 10px #00351d55)}
+.btn{display:inline-block;background:var(--yellow);color:#17351f;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:900;margin-top:8px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 14px}.section-head h2{margin:0;font-size:23px}.section-head span{color:var(--muted);font-size:13px}
+.sports{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.sport{border:1px solid var(--line);background:white;border-radius:15px;padding:15px 8px;text-align:center;font-weight:800;cursor:pointer;transition:.15s}.sport:hover,.sport.active{background:#e6f5e9;border-color:#9ed4ae;transform:translateY(-2px)}.sport b{display:block;font-size:25px;margin-bottom:5px}
+.grid{display:grid;grid-template-columns:1.35fr .85fr;gap:18px}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:18px}.match{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 0;border-bottom:1px solid var(--line)}.match:last-child{border:0}.teams{font-weight:800}.teams small{display:block;color:var(--muted);font-weight:500;margin-top:4px}.score{text-align:center;font-size:18px;font-weight:950;background:#f0f5ef;padding:8px 12px;border-radius:10px;white-space:nowrap}.tag{font-size:10px;font-weight:900;color:#17663c;background:#e8f6eb;padding:5px 8px;border-radius:30px;display:inline-block;margin-bottom:6px}
+.news{padding:13px 0;border-bottom:1px solid var(--line)}.news:last-child{border:0}.news strong{display:block;margin-bottom:4px}.news p{font-size:13px;color:var(--muted);margin:0;line-height:1.5}
+.table{width:100%;border-collapse:collapse;font-size:14px}.table th,.table td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line)}.table th{color:var(--muted);font-size:11px;text-transform:uppercase}.table td:first-child{font-weight:900}
+.quiz{background:#fff9d9;border:1px solid #f0e6a5;border-radius:18px;padding:20px}.quiz button{border:1px solid #e6d878;background:white;padding:10px 13px;border-radius:10px;margin:5px 5px 0 0;font-weight:700;cursor:pointer}.quiz button:hover{background:#fff0a0}.notice{font-size:12px;color:var(--muted);line-height:1.5;margin-top:18px}
+footer{background:#073e27;color:#d7e9dd;padding:25px 5%;text-align:center;font-size:13px}footer strong{color:var(--yellow)}
+@media(max-width:760px){header{align-items:flex-start;flex-direction:column}nav{gap:13px}.hero{grid-template-columns:1fr;padding:25px}.hero-art{display:none}.sports{grid-template-columns:repeat(3,1fr)}.grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">B</span> BABYBET</div>
+  <nav><a href="#sports">Sports</a><a href="#matchs">Matchs</a><a href="#classement">Classement</a><a href="#quiz">Quiz gratuit</a></nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div><div class="eyebrow">Toute l'actualité sportive au même endroit</div><h1>Vis le sport.<br><span style="color:var(--yellow)">Comprends le jeu.</span></h1>
+    <p>Résultats, calendriers, statistiques et actualités des compétitions du monde entier. BABYBET, ton espace 100 % sport.</p>
+    <a class="btn" href="#matchs">Explorer les matchs</a></div>
+    <div class="hero-art" aria-hidden="true">⚽🏀</div>
+  </section>
+
+  <div class="section-head" id="sports"><h2>Choisis ton sport</h2><span>Plusieurs disciplines, une seule passion</span></div>
+  <section class="sports">
+    <button class="sport active" data-sport="Tous"><b>🌍</b>Tous</button>
+    <button class="sport" data-sport="Football"><b>⚽</b>Football</button>
+    <button class="sport" data-sport="Basket"><b>🏀</b>Basket</button>
+    <button class="sport" data-sport="Tennis"><b>🎾</b>Tennis</button>
+    <button class="sport" data-sport="Rugby"><b>🏉</b>Rugby</button>
+    <button class="sport" data-sport="Volley"><b>🏐</b>Volley</button>
+    <button class="sport" data-sport="Handball"><b>🤾</b>Handball</button>
+    <button class="sport" data-sport="Hockey"><b>🏒</b>Hockey</button>
+    <button class="sport" data-sport="Baseball"><b>⚾</b>Baseball</button>
+    <button class="sport" data-sport="Formule 1"><b>🏎️</b>Formule 1</button>
+    <button class="sport" data-sport="Cricket"><b>🏏</b>Cricket</button>
+    <button class="sport" data-sport="Boxe"><b>🥊</b>Boxe</button>
+  </section>
+
+  <div class="section-head" id="matchs"><h2>Matchs & rencontres</h2><span>Exemples de démonstration — pas de scores en direct</span></div>
+  <section class="grid">
+    <div class="panel" id="match-list">
+      <div class="match" data-sport="Football"><div class="teams">Équipe A — Équipe B<small>Football · Rencontre exemple</small></div><div class="score">À venir</div></div>
+      <div class="match" data-sport="Basket"><div class="teams">Club Alpha — Club Beta<small>Basket · Rencontre exemple</small></div><div class="score">À venir</div></div>
+      <div class="match" data-sport="Tennis"><div class="teams">Joueur 1 — Joueur 2<small>Tennis · Rencontre exemple</small></div><div class="score">À venir</div></div>
+      <div class="match" data-sport="Rugby"><div class="teams">Équipe Rouge — Équipe Bleue<small>Rugby · Rencontre exemple</small></div><div class="score">À venir</div></div>
+    </div>
+    <aside class="panel">
+      <h3 style="margin-top:0">À la une</h3>
+      <div class="news"><strong>Le sport rassemble</strong><p>Retrouve ici les grandes actualités et les temps forts des compétitions.</p></div>
+      <div class="news"><strong>Les statistiques font la différence</strong><p>Compare les performances, les résultats et les parcours des équipes.</p></div>
+      <div class="news"><strong>Une plateforme multisport</strong><p>Football, basket, tennis et de nombreuses autres disciplines.</p></div>
+    </aside>
+  </section>
+
+  <div class="section-head" id="classement"><h2>Classement — exemple</h2><span>Données fictives pour présenter le design</span></div>
+  <section class="panel">
+    <table class="table"><thead><tr><th>Position</th><th>Équipe</th><th>J</th><th>Pts</th></tr></thead><tbody>
+      <tr><td>1</td><td>Club Vert</td><td>0</td><td>0</td></tr><tr><td>2</td><td>Club Jaune</td><td>0</td><td>0</td></tr><tr><td>3</td><td>Club Blanc</td><td>0</td><td>0</td></tr>
+    </tbody></table>
+  </section>
+
+  <div class="section-head" id="quiz"><h2>Le quiz BABYBET</h2><span>Un défi de connaissances, sans argent</span></div>
+  <section class="quiz">
+    <strong>Question : combien de joueurs d'une équipe de football sont sur le terrain au début d'un match ?</strong><br>
+    <button onclick="answer(this,false)">9 joueurs</button><button onclick="answer(this,true)">11 joueurs</button><button onclick="answer(this,false)">12 joueurs</button>
+    <p id="quiz-result" aria-live="polite" style="font-weight:800;margin-bottom:0"></p>
+  </section>
+  <p class="notice">Version de démonstration créée par CHIECK BINDE. Les matchs, classements et équipes affichés sont fictifs et ne représentent pas des données en direct. BABYBET est un portail d'information et de divertissement sportif : aucun pari, aucune mise et aucun dépôt d'argent.</p>
+</main>
+<footer><strong>BABYBET</strong> · Créé par CHIECK BINDE · La passion du sport, tout simplement.</footer>
+<script>
+document.querySelectorAll('.sport').forEach(btn=>btn.addEventListener('click',()=>{
+ document.querySelectorAll('.sport').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ const chosen=btn.dataset.sport;
+ document.querySelectorAll('#match-list .match').forEach(row=>row.style.display=(chosen==='Tous'||row.dataset.sport===chosen)?'flex':'none');
+}));
+function answer(btn,ok){document.getElementById('quiz-result').textContent=ok?'Bonne réponse ! Bravo 👏':'Pas tout à fait. La bonne réponse est 11 joueurs.';document.querySelectorAll('.quiz button').forEach(b=>b.disabled=true);}
+</script>
+</body></html>
